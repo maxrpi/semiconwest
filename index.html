@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RPI Alumni Giveaway — SEMICON West 2026</title>
+  <meta name="description" content="Enter the RPI alumni giveaway at SEMICON West 2026.">
+  <style>
+    :root { --rpi-red:#d6001c; --ink:#151515; --muted:#666; --line:#d9d9d9; --bg:#f5f5f5; }
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink);display:grid;place-items:center;padding:24px}
+    .card{width:min(100%,560px);background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.08);overflow:hidden}
+    .bar{height:12px;background:var(--rpi-red)}
+    .content{padding:30px}
+    .eyebrow{color:var(--rpi-red);font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;margin-bottom:8px}
+    h1{margin:0 0 10px;font-size:clamp(1.8rem,6vw,2.5rem);line-height:1.08}
+    .intro{margin:0 0 28px;color:#444;font-size:1.05rem;line-height:1.5}
+    label{display:block;font-weight:750;margin:18px 0 7px}
+    input[type="text"],input[type="email"]{width:100%;border:1px solid #aaa;border-radius:9px;padding:13px 14px;font:inherit;font-size:1.05rem;background:#fff}
+    input:focus{outline:3px solid rgba(214,0,28,.18);border-color:var(--rpi-red)}
+    .honeypot{display:none!important}
+    button{width:100%;margin-top:24px;border:0;border-radius:9px;padding:14px 18px;font:inherit;font-weight:800;font-size:1.05rem;background:var(--rpi-red);color:#fff;cursor:pointer}
+    button:hover{filter:brightness(.93)}
+    .fineprint{margin-top:20px;color:var(--muted);font-size:.82rem;line-height:1.45}
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="bar"></div>
+    <div class="content">
+      <div class="eyebrow">RPI at SEMICON West 2026</div>
+      <h1>Alumni Giveaway</h1>
+      <p class="intro">Enter your name and email address for the RPI alumni giveaway at SEMICON West.</p>
+      <form id="giveaway-form" action="https://formsubmit.co/max.bloomfield+semiconwest@gmail.com" method="POST">
+        <label for="name">Full name</label>
+        <input id="name" name="Name" type="text" autocomplete="name" required>
+        <label for="email">Email address</label>
+        <input id="email" name="Email" type="email" autocomplete="email" inputmode="email" required>
+        <input class="honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="Event" value="SEMICON West 2026 — RPI Alumni Giveaway">
+        <input type="hidden" id="submitted-at" name="Submitted at" value="">
+        <input type="hidden" name="_subject" value="SEMICON West 2026 giveaway entry">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://maxrpi.github.io/semiconwest/thank-you.html">
+        <button type="submit">Enter Giveaway</button>
+      </form>
+      <p class="fineprint">Your name and email address will be used to administer this giveaway and contact the winner.</p>
+    </div>
+  </main>
+  <script>
+    document.getElementById('giveaway-form').addEventListener('submit',function(){
+      document.getElementById('submitted-at').value=new Date().toISOString();
+    });
+  </script>
+</body>
+</html>
